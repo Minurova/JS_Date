@@ -96,3 +96,35 @@ if(hours >=12 && hours <16){
     alert('Добрый день');  
 }
 }
+function task8() {
+    function getDaysOfCelebrity(celebrityDays)
+    {
+        let daysArr=[];
+        for (day of celebrityDays)
+        {
+    let days=Object.values(day);
+    let d=new Date();
+    let celebrityDay=new Date(d.getFullYear(),days[1],days[0]);
+    daysArr.push(celebrityDay.getDay());
+
+    }
+return daysArr;
+    }
+    let daysOfWeek=['воскресенье','понедельник','вторник','среду','четверг','пятницу','субботу'];
+    let month=["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"];
+    let celebrityDays=[
+        {day:1,month:0},
+        {day:7,month:0},
+        {day:23,month:1},
+        {day:8,month:2},
+        {day:1,month:4},
+        {day:9,month:4},
+        {day:12,month:5},
+        {day:4,month:10}
+    ];
+    let daysArr=getDaysOfCelebrity(celebrityDays);
+    daysArr.forEach(function(elem,index){
+let str=`${celebrityDays[index].day} ${month[celebrityDays[index].month]} выпадает на ${daysOfWeek[elem]}`;
+    console.log(str);
+})
+}
