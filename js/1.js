@@ -48,3 +48,25 @@ return (`${d}:${h}:${m}:${s}`);}
 alert(msToTime(timeInMiliseconds));
 }
 }
+function task5() {
+    let data;
+    while(true)
+    { data = prompt("Введите дату своего рождения - DD.MM.YYYY");
+    let re=/^\d{2}([./-])\d{2}\1\d{4}$/;
+    if (re.test(data))
+    {
+    break;
+    }
+    }
+    function getAge(data)
+    {
+    let now=new Date();
+    let ageYear=now.getFullYear()-data.getFullYear();
+    let ageMonth=now.getMonth()-data.getMonth();
+    return `Возраст в годах ${ageYear}, в месяцах ${ageYear*12+ageMonth}, в днях ${ageYear*365+ageMonth*30+now.getDate()-data.getDate()+ageYear/4}`;
+    }
+    console.log(data);
+    let arr=data.split(".");
+    data=new Date(arr[2],arr[1],arr[0]);
+    alert(getAge(data));
+}
