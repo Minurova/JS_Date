@@ -70,3 +70,17 @@ function task5() {
     data=new Date(arr[2],arr[1],arr[0]);
     alert(getAge(data));
 }
+function task6() {
+    for (let friday of arrayOfFridaythe13In(2023))
+            console.log(friday.toString())
+        function arrayOfFridaythe13In(year) {
+            let array = [];
+            for (let month = 0; month < 12; month++) {
+                let d = new Date(year, month, 13);
+                if (d.getDay() == 5) {
+                    array.push(d.toString());
+                }
+            }
+            return array;
+        }
+}
