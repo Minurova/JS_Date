@@ -84,3 +84,15 @@ function task6() {
             return array;
         }
 }
+function task7() {
+    let hours = (new Date()).getHours();
+if(hours >=16 || hours <6){
+    alert('Добрый вечер');    
+} else
+if(hours >=6 && hours <12){
+    alert('Доброе утро');  
+} else
+if(hours >=12 && hours <16){
+    alert('Добрый день');  
+}
+}
