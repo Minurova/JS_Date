@@ -28,3 +28,23 @@ return {
 }}
 console.log(getObjectMyDays(days));
 }
+function task4() {
+    let timeInMiliseconds=prompt(`Введите количество миллисекунд`);
+    if(Number.isInteger(timeInMiliseconds) || timeInMiliseconds<0)
+{
+alert("Input Error");
+}
+else {function msToTime(timeInMiliseconds) {
+    let d,h,m,s;
+    d = Math.floor(timeInMiliseconds/1000/60/60/24);
+    h = Math.floor((timeInMiliseconds/1000/60/60) % 24);
+    m = Math.floor(((timeInMiliseconds/1000/60/60 - h)*60) % 60);
+    s = Math.floor((((timeInMiliseconds/1000/60/60 - h)*60 - m)*60) % 60);
+d < 10 ? d = `0${d}`: s = `${d}`;
+s < 10 ? s = `0${s}`: s = `${s}`;
+m < 10 ? m = `0${m}`: m = `${m}`;
+h < 10 ? h = `0${h}`: h = `${h}`;
+return (`${d}:${h}:${m}:${s}`);}
+alert(msToTime(timeInMiliseconds));
+}
+}
