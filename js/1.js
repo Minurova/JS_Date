@@ -22,9 +22,9 @@ else next=today+1;
 if (today==0) prev=6;
 else prev=today-1;
 return {
-    next: next,
-    curr: today,
-    prev: prev,
+    next: days[next],
+    curr: days[today],
+    prev: days[prev],
 }}
-console.log(getObjectMyDays(days));
+console.log(getObjectMyDays());
 }
